@@ -26,8 +26,8 @@ void Choice(bool val, string box)
 
 string InputVal()
 {
-Console.Write("Введите число: ");
-return Console.ReadLine();
+    Console.Write("Введите число: ");
+    return Console.ReadLine();
 }
 
 string box = InputVal();
