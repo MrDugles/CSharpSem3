@@ -4,11 +4,11 @@
 // 12821 -> да
 // 23432 -> да
 
-bool IsPalindrom(string box)
+bool IsPalindrom(string inputText)
 {
-    for (int first = 0, last = box.Length - 1; first < last; ++first, --last)
+    for (int first = 0, last = inputText.Length - 1; first < last; ++first, --last)
     {
-        if (box[first] != box[last])
+        if (inputText[first] != inputText[last])
         {
             return false;
         }
@@ -16,19 +16,19 @@ bool IsPalindrom(string box)
     return true;
 }
 
-void Choice(bool val, string box)
+void PrintResult(bool val, string inputText)
 {
     if (val == true)
-        Console.WriteLine($"{box} -> да");
+        Console.WriteLine($"{inputText} -> да");
     else
-        Console.WriteLine($"{box} -> нет");
+        Console.WriteLine($"{inputText} -> нет");
 }
 
 string InputVal()
 {
-Console.Write("Введите число: ");
-return Console.ReadLine();
+    Console.Write("Введите число: ");
+    return Console.ReadLine();
 }
 
-string box = InputVal();
-Choice(IsPalindrom(box), box);
+string inputText = InputVal();
+PrintResult(IsPalindrom(inputText), inputText);
