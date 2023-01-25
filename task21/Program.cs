@@ -43,11 +43,10 @@
 
 void CountDistance(int x1, int y1, int z1, int x2, int y2, int z2)
 {
-    int calcX = (x2 - x1) * (x2 - x1);
-    int calcY = (y2 - y1) * (y2 - y1);
-    int calcZ = (z2 - z1) * (z2 - z1);
-    int calcXYZ = calcX + calcY + calcZ;
-    double distance = Math.Round(Math.Sqrt(calcXYZ), 2);
+    double distance = (x2 - x1) * (x2 - x1);
+    distance += (y2 - y1) * (y2 - y1);
+    distance += (z2 - z1) * (z2 - z1);
+    distance = Math.Round(Math.Sqrt(distance), 2);
     Console.WriteLine($"A({x1},{y1},{z1}); B({x2},{y2},{z2}) -> {distance}");
 }
 
