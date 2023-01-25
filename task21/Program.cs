@@ -39,16 +39,16 @@
     return result;
 }
 
-void CountDistance(int x1, int y1, int z1, int x2, int y2, int z2)
+void CountDistance((int x, int y, int z) firstDot,(int x, int y, int z) secondDot)
 {
-    double distance = (x2 - x1) * (x2 - x1);
-    distance += (y2 - y1) * (y2 - y1);
-    distance += (z2 - z1) * (z2 - z1);
+    double distance = Math.Pow((secondDot.x - firstDot.x), 2);
+    distance += Math.Pow(((secondDot.y - firstDot.y)), 2);
+    distance += Math.Pow((((secondDot.z - firstDot.z))), 2);
     distance = Math.Round(Math.Sqrt(distance), 2);
-    Console.WriteLine($"A({x1},{y1},{z1}); B({x2},{y2},{z2}) -> {distance}");
+    Console.WriteLine($"A({firstDot.x},{firstDot.y},{firstDot.z}); B({secondDot.x},{secondDot.y},{secondDot.z}) -> {distance}");
 }
 
 Console.Clear();
 (int x, int y, int z) firstDot = GetValue("Введите координаты для первой точки: ");
 (int x, int y, int z) secondDot = GetValue("Введите координаты для второй точки: ");
-CountDistance(firstDot.x, firstDot.y, firstDot.z, secondDot.x, secondDot.y, secondDot.z);
+CountDistance(firstDot, secondDot);
