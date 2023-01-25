@@ -1,38 +1,29 @@
-﻿/*
-Задача 23
-Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
-3 -> 1, 8, 27
-5 -> 1, 8, 27, 64, 125
-*/
+﻿// Задача 23
+// Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+// 3 -> 1, 8, 27
+// 5 -> 1, 8, 27, 64, 125
 
-double CubeOfNumber(int number)
+double SetCube(int val)
 {
-    return Math.Pow(number, 3);
+    return Math.Pow(val, 3);
 }
 
-void FetchCubes(int number)
+void GetCube(int number)
 {
-    Console.Write("Таблица кубов чисел: ");
+    Console.Write($"{number} -> ");
     for (int i = 1; i < number; i++)
     {
-        Console.Write(CubeOfNumber(i) + ", ");
+        Console.Write(SetCube(i) + ", ");
     }
-    Console.Write(CubeOfNumber(number));
+    Console.Write(SetCube(number));
 }
 
-
-int GetNumber(string promptText)
+int SetVal()
 {
-    Console.Write(promptText + ": ");
-    string? strNum = Console.ReadLine();
-    if (strNum == null || strNum.Trim() == "")
-    {
-        Console.WriteLine("Вы ничего не ввели!");
-        return 0;
-    }
-    return int.Parse(strNum);
+    Console.Write($"Введите число: ");
+    int num = int.Parse(Console.ReadLine());
+    return num;
 }
 
-int number = GetNumber("Введите натуральное число");
-
-FetchCubes(number);
+int num = SetVal();
+GetCube(num);
