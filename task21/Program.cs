@@ -37,13 +37,12 @@
         if (z.error == true) continue;
     }
     Console.Clear();
-    (int, int, int) result = (x.num, y.num, z.num);    
+    (int, int, int) result = (x.num, y.num, z.num);
     return result;
 }
 
 void CountDistance(int x1, int y1, int z1, int x2, int y2, int z2)
 {
-    
     int calcX = (x2 - x1) * (x2 - x1);
     int calcY = (y2 - y1) * (y2 - y1);
     int calcZ = (z2 - z1) * (z2 - z1);
